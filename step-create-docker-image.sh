@@ -6,7 +6,7 @@ RUN_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd $RUN_PATH
 
 echo ----[ Build docker image ]----
-DOCKER_IMAGE=fcloud-docker-apache_php5:$VERSION
+DOCKER_IMAGE=fcloud-docker-apache_php:$VERSION
 docker build -t $DOCKER_IMAGE .
 
 rm -rf $DOCKER_BUILD
