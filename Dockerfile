@@ -9,4 +9,6 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update &&
 
 RUN a2enmod rewrite
 
+RUN ln -s /usr/bin/msmtp /usr/sbin/sendmail
+
 CMD /bin/bash
