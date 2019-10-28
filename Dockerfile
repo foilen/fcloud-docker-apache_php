@@ -4,7 +4,7 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update &&
     apache2 \
     haproxy=1.8.\* msmtp supervisor \
     gnupg2 \
-    php7.2=7.2.19-0ubuntu0.18.04.1 \
+    php7.2=7.2.24-0ubuntu0.18.04.1 \
     php-apcu php-curl php-gd php-imagick php-imap php-intl php-mbstring php-memcache php-memcached php-mysql php-pgsql php-ps php-pspell php-recode php-sqlite3 php-tidy php-xmlrpc php-xml php-zip \
     curl less vim wget \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
