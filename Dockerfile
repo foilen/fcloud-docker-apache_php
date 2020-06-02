@@ -13,7 +13,7 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; \
     echo "deb https://dl.bintray.com/foilen/debian stable main" > /etc/apt/sources.list.d/foilen.list && \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61 && \
     apt-get update && apt-get install -y \
-    sendmail-to-msmtp=1.0.1 \
+    sendmail-to-msmtp=1.1.0 \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN a2enmod rewrite
