@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
 RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update && apt-get install -y \
     apache2 \
-    haproxy=1.8.\* msmtp supervisor \
+    haproxy=2.0.\* msmtp supervisor \
     gnupg2 \
-    php7.2=7.2.24-0ubuntu0.18.04.6 \
-    php-apcu php-bcmath php-curl php-gd php-imagick php-imap php-intl php-mbstring php-memcache php-memcached php-mysql php-pgsql php-ps php-pspell php-recode php-soap php-sqlite3 php-tidy php-xmlrpc php-xml php-zip \
+    php7.4=7.4.3-4ubuntu2.2 \
+    php-apcu php-bcmath php-curl php-gd php-imagick php-imap php-intl php-mbstring php-memcache php-memcached php-mysql php-pgsql php-ps php-pspell php-soap php-sqlite3 php-tidy php-xmlrpc php-xml php-zip \
     curl less vim wget \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
