@@ -5,6 +5,7 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update &&
     apt-utils \
     msmtp \
     gnupg2 \
+    libapache2-mod-fcgid \
     php7.4=7.4.9-1ubuntu1.1 \
     php-apcu php-bcmath php-curl php-gd php-gmp php-imagick php-imap php-intl php-mbstring php-memcache php-memcached php-mysql php-pgsql php-ps php-pspell php-soap php-sqlite3 php-tidy php-xmlrpc php-xml php-zip \
     curl less vim wget \
@@ -17,6 +18,10 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; \
     sendmail-to-msmtp=1.1.0 \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN a2enmod rewrite
+RUN a2enmod \
+  fcgid \
+  headers \
+  proxy_fcgi \
+  rewrite
 
 CMD /bin/bash
