@@ -5,6 +5,7 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update &&
     apt-utils \
     msmtp \
     gnupg2 \
+    imagemagick \
     libapache2-mod-fcgid \
     php7.4=7.4.9-1ubuntu1.1 \
     php-apcu php-bcmath php-curl php-gd php-gmp php-imagick php-imap php-intl php-mbstring php-memcache php-memcached php-mysql php-pgsql php-ps php-pspell php-soap php-sqlite3 php-tidy php-xmlrpc php-xml php-zip \
@@ -23,5 +24,7 @@ RUN a2enmod \
   headers \
   proxy_fcgi \
   rewrite
+
+COPY assets/policy.xml /etc/ImageMagick-6/policy.xml
 
 CMD /bin/bash
