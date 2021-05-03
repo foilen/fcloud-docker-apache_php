@@ -12,12 +12,9 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update &&
     curl less vim wget \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; \
-    echo "deb https://dl.bintray.com/foilen/debian stable main" > /etc/apt/sources.list.d/foilen.list && \
-    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61 && \
-    apt-get update && apt-get install -y \
-    sendmail-to-msmtp=1.1.0 \
-  && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN wget https://deploy.foilen.com/sendmail-to-msmtp/sendmail-to-msmtp_1.1.1_amd64.deb && \
+  dpkg -i sendmail-to-msmtp_1.1.1_amd64.deb && \
+  rm sendmail-to-msmtp_1.1.1_amd64.deb
 
 RUN a2enmod \
   fcgid \
