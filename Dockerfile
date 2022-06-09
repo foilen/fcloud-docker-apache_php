@@ -4,7 +4,9 @@ FROM ubuntu:22.04
 RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update && apt-get install -y \
     apache2 \
     apt-utils \
+    composer \
     msmtp \
+    git \
     gnupg2 \
     imagemagick \
     libapache2-mod-fcgid \
