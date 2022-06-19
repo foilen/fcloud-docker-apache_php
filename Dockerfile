@@ -15,6 +15,13 @@ RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update &&
     curl less vim wget \
   && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+# NodeJS
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN export TERM=dumb ; export DEBIAN_FRONTEND=noninteractive ; apt-get update && apt-get install -y \
+    gcc g++ make \
+    nodejs \
+  && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # Sending emails easily
 RUN wget https://deploy.foilen.com/sendmail-to-msmtp/sendmail-to-msmtp_1.1.1_amd64.deb && \
   dpkg -i sendmail-to-msmtp_1.1.1_amd64.deb && \
